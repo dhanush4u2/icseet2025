@@ -10,9 +10,14 @@ const About = () => {
 
           <div className="prose prose-lg max-w-none mb-12">
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              The 2nd International Conference on Sustainable Energy and Environmental Technologies (ICSEET-2025) 
+              The 2nd International Conference on Sustainable Energy and Environmental Solutions (ICSEET-2025) 
               is a premier forum for researchers, practitioners, and students to present and discuss the most 
-              recent innovations, trends, and concerns in the field of sustainable energy and environmental technologies.
+              recent innovations, trends, and concerns in the field of sustainable energy and environmental solutions.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Organized by the Department of Chemistry, School of Applied Sciences at REVA University, Bangalore, 
+              this conference will be held from 11-13 December 2025, featuring a pre-conference workshop on 
+              Electrochemical Workstation and its applications on 11th December.
             </p>
           </div>
 

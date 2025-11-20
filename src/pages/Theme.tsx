@@ -78,7 +78,7 @@ const Theme = () => {
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold mb-4">Conference Themes</h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              ICSEET-2025 focuses on various aspects of sustainable energy and environmental technologies. 
+              ICSEET-2025 focuses on various aspects of sustainable energy and environmental solutions. 
               Researchers are invited to submit their work in the following thematic areas:
             </p>
           </div>
@@ -110,8 +110,9 @@ const Theme = () => {
               <h3 className="font-semibold text-lg mb-3">Important Note</h3>
               <p className="text-muted-foreground">
                 The above list is not exhaustive. Papers addressing other relevant topics within the broader 
-                scope of sustainable energy and environmental technologies are also welcome. Authors are encouraged 
-                to explore interdisciplinary approaches and innovative solutions to contemporary challenges.
+                scope of sustainable energy and environmental solutions are also welcome. Authors are encouraged 
+                to explore interdisciplinary approaches and innovative solutions to contemporary challenges in energy 
+                and environment.
               </p>
             </CardContent>
           </Card>

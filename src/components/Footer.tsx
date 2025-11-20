@@ -8,7 +8,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">ICSEET-2025</h3>
             <p className="text-sm opacity-90">
-              2nd International Conference on Sustainable Energy and Environmental Technologies
+              2nd International Conference on Sustainable Energy and Environmental Solutions
             </p>
           </div>
 
@@ -16,7 +16,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm opacity-90">
               <li>
-                <a href="/registration" className="hover:text-primary transition-colors">
+                <a href="https://tinyurl.com/icseet-2025" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                   Registration
                 </a>
               </li>
@@ -42,7 +42,9 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <span>icseet2025@reva.edu.in</span>
+                <a href="mailto:icseet-2025@reva.edu.in" className="hover:text-primary transition-colors">
+                  icseet-2025@reva.edu.in
+                </a>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4" />

@@ -77,7 +77,9 @@ const Contact = () => {
                     <Mail className="h-5 w-5 text-primary mt-1" />
                     <div>
                       <p className="font-semibold">Email</p>
-                      <p className="text-muted-foreground">Icseet.2025@gmail.com</p>
+                      <a href="mailto:icseet-2025@reva.edu.in" className="text-primary hover:underline">
+                        icseet-2025@reva.edu.in
+                      </a>
                     </div>
                   </div>
 
@@ -121,19 +123,18 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div>
-                    <p className="font-semibold">Dr. [Name]</p>
-                    <p className="text-sm text-muted-foreground">Conference Convener</p>
-                    <p className="text-sm text-muted-foreground">convener@icseet2025.in</p>
+                    <p className="font-semibold">Dr. B. R. Radha Krushna</p>
+                    <p className="text-sm text-muted-foreground">Convener, Professor & Head</p>
+                    <p className="text-sm text-muted-foreground">Department of Chemistry, REVA University</p>
                   </div>
                   <div>
-                    <p className="font-semibold">Dr. [Name]</p>
-                    <p className="text-sm text-muted-foreground">Technical Chair</p>
-                    <p className="text-sm text-muted-foreground">technical@icseet2025.in</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold">Prof. [Name]</p>
-                    <p className="text-sm text-muted-foreground">Registration Chair</p>
-                    <p className="text-sm text-muted-foreground">registration@icseet2025.in</p>
+                    <p className="font-semibold">Department of Chemistry</p>
+                    <p className="text-sm text-muted-foreground">School of Applied Sciences</p>
+                    <p className="text-sm text-muted-foreground">
+                      <a href="mailto:icseet-2025@reva.edu.in" className="text-primary hover:underline">
+                        icseet-2025@reva.edu.in
+                      </a>
+                    </p>
                   </div>
                 </CardContent>
               </Card>

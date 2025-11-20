@@ -12,7 +12,7 @@ const Navigation = () => {
     { name: "Theme", path: "/theme" },
     { name: "Speakers", path: "/speakers" },
     { name: "Committee", path: "/committee" },
-    { name: "Registration", path: "/registration" },
+    { name: "Registration", path: "https://tinyurl.com/icseet-2025", external: true },
     { name: "Sponsors", path: "/sponsors" },
     { name: "Schedule", path: "/schedule" },
     { name: "Contact", path: "/contact" },
@@ -32,15 +32,27 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  isActive(link.path) ? "text-primary" : "text-header-text"
-                }`}
-              >
-                {link.name}
-              </Link>
+              link.external ? (
+                <a
+                  key={link.path}
+                  href={link.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium transition-colors hover:text-primary text-header-text"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                    isActive(link.path) ? "text-primary" : "text-header-text"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )
             ))}
           </div>
 
@@ -62,16 +74,29 @@ const Navigation = () => {
         {mobileMenuOpen && (
           <div className="lg:hidden pb-4 border-t border-border mt-2">
             {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block py-2 px-4 text-sm font-medium transition-colors hover:bg-nav-hover ${
-                  isActive(link.path) ? "text-primary bg-nav-hover" : "text-header-text"
-                }`}
-              >
-                {link.name}
-              </Link>
+              link.external ? (
+                <a
+                  key={link.path}
+                  href={link.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block py-2 px-4 text-sm font-medium transition-colors hover:bg-nav-hover text-header-text"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`block py-2 px-4 text-sm font-medium transition-colors hover:bg-nav-hover ${
+                    isActive(link.path) ? "text-primary bg-nav-hover" : "text-header-text"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )
             ))}
           </div>
         )}

@@ -4,15 +4,15 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Schedule = () => {
   const scheduleDay1 = [
-    { time: "08:00 - 09:00", activity: "Registration & Welcome Coffee", location: "Main Lobby" },
-    { time: "09:00 - 09:30", activity: "Inauguration Ceremony", location: "Main Auditorium" },
-    { time: "09:30 - 10:30", activity: "Keynote Address 1", location: "Main Auditorium" },
-    { time: "10:30 - 11:00", activity: "Tea Break & Networking", location: "Conference Hall" },
-    { time: "11:00 - 13:00", activity: "Technical Session 1A & 1B", location: "Halls A & B" },
+    { time: "08:30 - 09:00", activity: "Registration & Welcome", location: "Main Lobby" },
+    { time: "09:00 - 09:30", activity: "Inauguration & Introduction", location: "Workshop Hall" },
+    { time: "09:30 - 11:00", activity: "Session 1: Fundamentals of Electrochemical Workstation", location: "Workshop Hall" },
+    { time: "11:00 - 11:30", activity: "Tea Break & Networking", location: "Conference Hall" },
+    { time: "11:30 - 13:00", activity: "Session 2: Cyclic Voltammetry & Applications", location: "Workshop Hall" },
     { time: "13:00 - 14:00", activity: "Lunch Break", location: "Dining Hall" },
-    { time: "14:00 - 16:00", activity: "Technical Session 2A & 2B", location: "Halls A & B" },
-    { time: "16:00 - 16:30", activity: "Tea Break", location: "Conference Hall" },
-    { time: "16:30 - 18:00", activity: "Poster Session", location: "Exhibition Hall" },
+    { time: "14:00 - 15:30", activity: "Session 3: Electrochemical Impedance Spectroscopy", location: "Workshop Hall" },
+    { time: "15:30 - 16:00", activity: "Tea Break", location: "Conference Hall" },
+    { time: "16:00 - 17:30", activity: "Session 4: Hands-on Training & Demonstrations", location: "Workshop Hall" },
   ];
 
   const scheduleDay2 = [
@@ -68,6 +68,9 @@ const Schedule = () => {
             <p className="text-lg text-muted-foreground">
               ICSEET-2025 | December 11-13, 2025
             </p>
+            <p className="text-sm text-muted-foreground mt-2">
+              Pre-Conference Workshop: Dec 11 | Main Conference: Dec 12-13
+            </p>
           </div>
 
           <Card className="mb-8 bg-primary/5 border-primary/20">
@@ -84,7 +87,7 @@ const Schedule = () => {
 
           <Tabs defaultValue="day1" className="mb-12">
             <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="day1">Day 1 - Dec 11</TabsTrigger>
+              <TabsTrigger value="day1">Day 1 - Dec 11 (Pre-Conference)</TabsTrigger>
               <TabsTrigger value="day2">Day 2 - Dec 12</TabsTrigger>
               <TabsTrigger value="day3">Day 3 - Dec 13</TabsTrigger>
             </TabsList>
@@ -94,8 +97,11 @@ const Schedule = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Calendar className="h-5 w-5 text-primary" />
-                    Day 1 - Thursday, December 11, 2025
+                    Day 1 - Thursday, December 11, 2025 (Pre-Conference Workshop)
                   </CardTitle>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    Hands-on Training on Electrochemical Workstation and its Applications
+                  </p>
                 </CardHeader>
                 <CardContent>
                   <ScheduleTable schedule={scheduleDay1} />

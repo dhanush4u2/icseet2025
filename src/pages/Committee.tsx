@@ -1,7 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, Award, Globe } from "lucide-react";
+import { Users, Award, Globe, Building2, UserCheck } from "lucide-react";
+import { chiefPatrons, patrons, organizingCommittee, advisoryCommittee } from "@/data/conferenceData";
 
 const Committee = () => {
+  const conveners = [
+    { name: "Dr. B. R. Radha Krushna", designation: "Professor & Head, Department of Chemistry, REVA University" },
+  ];
+
   return (
     <div className="min-h-screen py-12">
       <div className="container mx-auto px-4">
@@ -9,123 +14,115 @@ const Committee = () => {
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold mb-4">Organizing Committee</h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              The conference is organized by a dedicated team of experts from REVA University and 
-              collaborating institutions worldwide.
+              ICSEET-2025 is organized by the Department of Chemistry, School of Applied Sciences, 
+              REVA University, with support from esteemed faculty and experts worldwide.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <Card className="text-center">
-              <CardHeader>
-                <CardTitle className="flex flex-col items-center gap-2">
-                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Users className="h-6 w-6 text-primary" />
-                  </div>
-                  Patron
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="font-semibold">Chancellor</p>
-                <p className="text-muted-foreground text-sm">REVA University</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center">
-              <CardHeader>
-                <CardTitle className="flex flex-col items-center gap-2">
-                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Award className="h-6 w-6 text-primary" />
-                  </div>
-                  Chief Patron
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="font-semibold">Vice Chancellor</p>
-                <p className="text-muted-foreground text-sm">REVA University</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center">
-              <CardHeader>
-                <CardTitle className="flex flex-col items-center gap-2">
-                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Globe className="h-6 w-6 text-primary" />
-                  </div>
-                  General Chair
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="font-semibold">Dean</p>
-                <p className="text-muted-foreground text-sm">School of Applied Sciences</p>
-              </CardContent>
-            </Card>
-          </div>
-
+          {/* Chief Patrons */}
           <Card className="mb-8">
-            <CardHeader>
-              <CardTitle>Advisory Committee</CardTitle>
+            <CardHeader className="bg-gradient-to-r from-primary/10 to-primary/5">
+              <CardTitle className="flex items-center gap-2">
+                <Award className="h-6 w-6 text-primary" />
+                Chief Patrons
+              </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <h4 className="font-semibold mb-3">International Members</h4>
-                  <ul className="space-y-2 text-muted-foreground text-sm">
-                    <li>• To be announced</li>
-                    <li>• To be announced</li>
-                    <li>• To be announced</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-3">National Members</h4>
-                  <ul className="space-y-2 text-muted-foreground text-sm">
-                    <li>• To be announced</li>
-                    <li>• To be announced</li>
-                    <li>• To be announced</li>
-                  </ul>
-                </div>
+            <CardContent className="pt-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                {chiefPatrons.map((person, index) => (
+                  <div key={index} className="text-center py-4">
+                    <p className="font-bold text-xl mb-1">{person.name}</p>
+                    <p className="text-muted-foreground">{person.designation}</p>
+                  </div>
+                ))}
               </div>
             </CardContent>
           </Card>
 
+          {/* Patrons */}
           <Card className="mb-8">
-            <CardHeader>
-              <CardTitle>Technical Program Committee</CardTitle>
+            <CardHeader className="bg-gradient-to-r from-primary/10 to-primary/5">
+              <CardTitle className="flex items-center gap-2">
+                <Building2 className="h-6 w-6 text-primary" />
+                Patrons
+              </CardTitle>
             </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-4">
-                The Technical Program Committee consists of renowned researchers and experts from various 
-                institutions worldwide who will review submitted papers and ensure the quality of the conference program.
+            <CardContent className="pt-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {patrons.map((person, index) => (
+                  <div key={index} className="text-center py-4 bg-muted/30 rounded-lg">
+                    <p className="font-bold text-lg mb-1">{person.name}</p>
+                    <p className="text-sm text-muted-foreground px-2">{person.designation}</p>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Convener */}
+          <Card className="mb-8">
+            <CardHeader className="bg-gradient-to-r from-primary/10 to-primary/5">
+              <CardTitle className="flex items-center gap-2">
+                <UserCheck className="h-6 w-6 text-primary" />
+                Convener
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="pt-6">
+              {conveners.map((person, index) => (
+                <div key={index} className="text-center py-4">
+                  <p className="font-bold text-xl mb-1">{person.name}</p>
+                  <p className="text-muted-foreground">{person.designation}</p>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+
+          {/* Organizing Committee */}
+          <Card className="mb-8">
+            <CardHeader className="bg-gradient-to-r from-primary/10 to-primary/5">
+              <CardTitle className="flex items-center gap-2">
+                <Users className="h-6 w-6 text-primary" />
+                Organizing Committee
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="pt-6">
+              <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {organizingCommittee.map((member, index) => (
+                  <div key={index} className="p-4 bg-muted rounded-lg text-center">
+                    <p className="font-semibold">{member}</p>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Advisory Committee */}
+          <Card className="mb-8">
+            <CardHeader className="bg-gradient-to-r from-primary/10 to-primary/5">
+              <CardTitle className="flex items-center gap-2">
+                <Globe className="h-6 w-6 text-primary" />
+                Advisory Committee
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="pt-6">
+              <div className="space-y-3">
+                {advisoryCommittee.map((member, index) => (
+                  <div key={index} className="p-3 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors">
+                    <p className="font-semibold text-foreground">{member.name}</p>
+                    <p className="text-sm text-muted-foreground mt-1">{member.affiliation}</p>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Department Information */}
+          <Card className="mt-8">
+            <CardContent className="pt-6">
+              <p className="text-center text-muted-foreground">
+                <strong>Organized by:</strong> Department of Chemistry, School of Applied Sciences<br />
+                REVA University, Bangalore, Karnataka, India
               </p>
-              <div className="bg-muted rounded-lg p-4">
-                <p className="text-sm text-muted-foreground">
-                  Committee member details will be updated soon.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Organizing Team</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div>
-                  <h4 className="font-semibold mb-3">Convener</h4>
-                  <p className="text-sm text-muted-foreground">Faculty Members</p>
-                  <p className="text-sm text-muted-foreground">REVA University</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-3">Co-Conveners</h4>
-                  <p className="text-sm text-muted-foreground">Faculty Members</p>
-                  <p className="text-sm text-muted-foreground">REVA University</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-3">Coordinators</h4>
-                  <p className="text-sm text-muted-foreground">Faculty & Staff</p>
-                  <p className="text-sm text-muted-foreground">REVA University</p>
-                </div>
-              </div>
             </CardContent>
           </Card>
         </div>

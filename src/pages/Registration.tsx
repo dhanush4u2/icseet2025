@@ -14,11 +14,11 @@ const Registration = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const registrationFees = [
-    { category: "Indian Academicians", early: "₹5,000", regular: "₹6,000" },
-    { category: "Indian Industry Professionals", early: "₹7,000", regular: "₹8,000" },
-    { category: "Indian Students", early: "₹3,000", regular: "₹4,000" },
-    { category: "Foreign Delegates", early: "$200", regular: "$250" },
-    { category: "Foreign Students", early: "$150", regular: "$180" },
+    { category: "Pre-Conference & Conference (11-13 Dec)", early: "₹1,500", regular: "₹1,500", note: "Faculty/Research Scholar - Hands-on Training on Electrochemical Workstation" },
+    { category: "Conference Only - Faculty/Research Scholar", early: "₹1,000", regular: "₹1,000", note: "12th & 13th Dec 2025" },
+    { category: "Conference Only - UG/PG Students", early: "₹500", regular: "₹500", note: "12th & 13th Dec 2025" },
+    { category: "Conference Only - Industry Delegates", early: "₹2,000", regular: "₹2,000", note: "12th & 13th Dec 2025" },
+    { category: "Conference Only - Foreign Delegates", early: "$100", regular: "$100", note: "12th & 13th Dec 2025" },
   ];
 
   const handleRegistration = (e: React.FormEvent) => {
@@ -69,16 +69,21 @@ const Registration = () => {
                         <thead>
                           <tr className="border-b">
                             <th className="text-left py-2 font-semibold">Category</th>
-                            <th className="text-right py-2 font-semibold">Early Bird</th>
-                            <th className="text-right py-2 font-semibold">Regular</th>
+                            <th className="text-right py-2 font-semibold">Fee</th>
                           </tr>
                         </thead>
                         <tbody>
                           {registrationFees.map((fee, index) => (
                             <tr key={index} className="border-b">
-                              <td className="py-3">{fee.category}</td>
-                              <td className="text-right py-3">{fee.early}</td>
-                              <td className="text-right py-3">{fee.regular}</td>
+                              <td className="py-3">
+                                <div>
+                                  <div className="font-medium">{fee.category}</div>
+                                  {fee.note && (
+                                    <div className="text-xs text-muted-foreground mt-1">{fee.note}</div>
+                                  )}
+                                </div>
+                              </td>
+                              <td className="text-right py-3 font-semibold">{fee.early}</td>
                             </tr>
                           ))}
                         </tbody>
@@ -86,7 +91,13 @@ const Registration = () => {
                     </div>
                     <div className="mt-4 p-3 bg-primary/5 rounded-lg">
                       <p className="text-sm text-muted-foreground">
-                        <strong>Early Bird Deadline:</strong> October 31, 2025
+                        <strong>Last Date for Registration:</strong> 5th December 2025
+                      </p>
+                      <p className="text-sm text-muted-foreground mt-2">
+                        <strong>Payment Link:</strong> <a href="https://www.reva.edu.in/payment" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.reva.edu.in/payment</a>
+                      </p>
+                      <p className="text-sm text-muted-foreground mt-2">
+                        <strong>Email abstracts to:</strong> <a href="mailto:icseet-2025@reva.edu.in" className="text-primary hover:underline">icseet-2025@reva.edu.in</a>
                       </p>
                     </div>
                   </CardContent>
@@ -100,74 +111,38 @@ const Registration = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <form onSubmit={handleRegistration} className="space-y-4">
-                      <div>
-                        <Label htmlFor="fullName">Full Name *</Label>
-                        <Input id="fullName" required placeholder="Enter your full name" />
-                      </div>
-
-                      <div>
-                        <Label htmlFor="email">Email *</Label>
-                        <Input id="email" type="email" required placeholder="your.email@example.com" />
-                      </div>
-
-                      <div>
-                        <Label htmlFor="phone">Phone Number *</Label>
-                        <Input id="phone" type="tel" required placeholder="+91-XXXXXXXXXX" />
-                      </div>
-
-                      <div>
-                        <Label htmlFor="affiliation">Affiliation/Organization *</Label>
-                        <Input id="affiliation" required placeholder="University/Company name" />
-                      </div>
-
-                      <div>
-                        <Label htmlFor="category">Registration Category *</Label>
-                        <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select category" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {registrationFees.map((fee, index) => (
-                              <SelectItem key={index} value={fee.category}>
-                                {fee.category}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                      </div>
-
+                    <div className="space-y-4">
                       <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
-                        <p className="text-sm font-semibold mb-2">Payment Instructions:</p>
-                        <ol className="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
-                          <li>Click "Proceed to Payment" to complete payment</li>
-                          <li>After successful payment, return here and enter your UTR number</li>
-                          <li>Submit the form for verification</li>
+                        <p className="text-sm font-semibold mb-2">How to Register:</p>
+                        <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
+                          <li>Fill the registration form using the link below</li>
+                          <li>Make payment using the payment link</li>
+                          <li>Send your abstract, filled registration form, and payment receipt to <a href="mailto:icseet-2025@reva.edu.in" className="text-primary hover:underline font-medium">icseet-2025@reva.edu.in</a></li>
                         </ol>
                       </div>
 
-                      <Button type="button" className="w-full" asChild>
+                      <Button className="w-full" size="lg" asChild>
+                        <a href="https://tinyurl.com/icseet-2025" target="_blank" rel="noopener noreferrer">
+                          Open Registration Form
+                        </a>
+                      </Button>
+
+                      <Button variant="outline" className="w-full" asChild>
                         <a href="https://www.reva.edu.in/payment" target="_blank" rel="noopener noreferrer">
                           Proceed to Payment
                         </a>
                       </Button>
 
-                      <div>
-                        <Label htmlFor="utr">UTR Number (Fill after payment) *</Label>
-                        <Input 
-                          id="utr" 
-                          required 
-                          placeholder="Enter UTR/Transaction Reference Number" 
-                        />
-                        <p className="text-xs text-muted-foreground mt-1">
-                          Enter the UTR number from your payment receipt for verification
+                      <div className="pt-4 border-t">
+                        <h4 className="font-semibold mb-2 text-sm">Contact Information</h4>
+                        <p className="text-sm text-muted-foreground">Department of Chemistry</p>
+                        <p className="text-sm text-muted-foreground">School of Applied Sciences</p>
+                        <p className="text-sm text-muted-foreground">REVA University, Bangalore</p>
+                        <p className="text-sm text-muted-foreground mt-2">
+                          Email: <a href="mailto:icseet-2025@reva.edu.in" className="text-primary hover:underline">icseet-2025@reva.edu.in</a>
                         </p>
                       </div>
-
-                      <Button type="submit" className="w-full" variant="secondary">
-                        Submit Registration
-                      </Button>
-                    </form>
+                    </div>
                   </CardContent>
                 </Card>
               </div>
@@ -259,20 +234,21 @@ const Registration = () => {
                     <CardContent>
                       <ul className="space-y-3 text-sm">
                         <li>
-                          <p className="font-semibold">Abstract Submission</p>
-                          <p className="text-muted-foreground">October 15, 2025</p>
+                          <p className="font-semibold">Abstract Submission Deadline</p>
+                          <p className="text-muted-foreground">5th December 2025</p>
                         </li>
                         <li>
-                          <p className="font-semibold">Acceptance Notification</p>
-                          <p className="text-muted-foreground">November 1, 2025</p>
+                          <p className="font-semibold">Registration Deadline</p>
+                          <p className="text-muted-foreground">5th December 2025</p>
                         </li>
                         <li>
-                          <p className="font-semibold">Full Paper Submission</p>
-                          <p className="text-muted-foreground">November 20, 2025</p>
+                          <p className="font-semibold">Pre-Conference</p>
+                          <p className="text-muted-foreground">11th December 2025</p>
+                          <p className="text-xs text-muted-foreground mt-1">Hands-on Training on Electrochemical Workstation</p>
                         </li>
                         <li>
-                          <p className="font-semibold">Early Bird Registration</p>
-                          <p className="text-muted-foreground">October 31, 2025</p>
+                          <p className="font-semibold">Conference</p>
+                          <p className="text-muted-foreground">12th & 13th December 2025</p>
                         </li>
                       </ul>
                     </CardContent>

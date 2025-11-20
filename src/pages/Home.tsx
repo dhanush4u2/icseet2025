@@ -18,7 +18,7 @@ const Home = () => {
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
               2nd International Conference on<br />
-              <span className="text-primary">Sustainable Energy and Environmental Technologies</span>
+              <span className="text-primary">Sustainable Energy and Environmental Solutions</span>
             </h1>
             
             <p className="text-xl md:text-2xl mb-3 opacity-90 font-semibold">ICSEET-2025</p>
@@ -35,7 +35,7 @@ const Home = () => {
 
             <div className="flex flex-wrap gap-4 justify-center">
               <Button size="lg" asChild>
-                <a href="/registration">Register Now</a>
+                <a href="https://tinyurl.com/icseet-2025" target="_blank" rel="noopener noreferrer">Register Now</a>
               </Button>
               <Button size="lg" variant="hero" asChild>
                 <a href="/about">Learn More</a>
@@ -100,13 +100,14 @@ const Home = () => {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">About ICSEET-2025</h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              The 2nd International Conference on Sustainable Energy and Environmental Technologies (ICSEET-2025) 
+              The 2nd International Conference on Sustainable Energy and Environmental Solutions (ICSEET-2025) 
               brings together researchers, academics, industry professionals, and students to discuss the latest 
               developments in sustainable energy solutions and environmental conservation technologies.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              This three-day conference will feature keynote speeches, technical sessions, poster presentations, 
-              and workshops focused on innovative approaches to address global energy and environmental challenges.
+              This three-day conference (11-13 December 2025) will feature keynote speeches, technical sessions, poster presentations, 
+              and workshops focused on innovative approaches to address global energy and environmental challenges. The pre-conference 
+              on 11th December includes hands-on training on Electrochemical Workstation and its applications.
             </p>
           </div>
         </div>
