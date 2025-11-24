@@ -12,7 +12,6 @@ import Speakers from "./pages/Speakers";
 import Committee from "./pages/Committee";
 import Registration from "./pages/Registration";
 import Sponsors from "./pages/Sponsors";
-import Schedule from "./pages/Schedule";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -33,7 +32,6 @@ const App = () => (
           <Route path="/committee" element={<Committee />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/sponsors" element={<Sponsors />} />
-          <Route path="/schedule" element={<Schedule />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

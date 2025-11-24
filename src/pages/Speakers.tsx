@@ -1,5 +1,4 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { User } from "lucide-react";
 import { speakers } from "@/data/conferenceData";
 
 const Speakers = () => {
@@ -16,13 +15,45 @@ const Speakers = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {speakers.map((speaker, index) => (
+            {speakers.map((speaker, index) => {
+              // Map speaker names to their photo filenames
+              const photoMap: { [key: string]: string } = {
+                "Dr. Prashanth Menezes": "prashanth.png",
+                "Dr. Xuezhu Xu": "xue.png",
+                "Dr. Mohamed Mamlouk": "mohamed.png",
+                "Dr. V. Ganesh": "ganesh.png",
+                "Dr. Muhammed Musthafa": "musthafa.png",
+                "Dr. M. Sathish": "satish.png",
+                "Dr. Rakesh Kumar Pandey": "rakesh.png",
+                "Dr. Shahid Rasul": "shahid.png",
+                "Dr. Rochan Sinha": "rochan.png",
+                "Dr. S. Radha": "radha.png",
+                "Dr. Murarai": "murarai.png",
+                "Dr. Manav Saxena": "manav.png",
+                "Dr. Ravi Kumar": "ravi.png",
+                "Dr. Himani Pandey": "himani.png",
+              };
+              const photoFileName = photoMap[speaker.name] || "placeholder.png";
+              
+              return (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardContent className="pt-6">
                   <div className="flex flex-col items-center text-center">
-                    {/* Placeholder for speaker image */}
-                    <div className="w-32 h-32 rounded-lg bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-4 overflow-hidden">
-                      <User className="h-16 w-16 text-primary/40" />
+                    {/* Speaker photo */}
+                    <div className="w-32 h-32 rounded-lg overflow-hidden mb-4 border-2 border-primary/10">
+                      <img 
+                        src={`/speakers/${photoFileName}`}
+                        alt={speaker.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          target.parentElement!.classList.add('bg-gradient-to-br', 'from-primary/20', 'to-primary/5', 'flex', 'items-center', 'justify-center');
+                          const icon = document.createElement('div');
+                          icon.innerHTML = '<svg class="h-16 w-16 text-primary/40" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>';
+                          target.parentElement!.appendChild(icon);
+                        }}
+                      />
                     </div>
                     
                     <h3 className="font-bold text-xl mb-1">{speaker.name}</h3>
@@ -35,7 +66,8 @@ const Speakers = () => {
                   </div>
                 </CardContent>
               </Card>
-            ))}
+            );
+            })}
           </div>
 
           <Card className="mt-12 bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20">

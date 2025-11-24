@@ -14,7 +14,6 @@ const Navigation = () => {
     { name: "Committee", path: "/committee" },
     { name: "Registration", path: "https://tinyurl.com/icseet-2025", external: true },
     { name: "Sponsors", path: "/sponsors" },
-    { name: "Schedule", path: "/schedule" },
     { name: "Contact", path: "/contact" },
   ];
 

@@ -21,11 +21,6 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/schedule" className="hover:text-primary transition-colors">
-                  Schedule
-                </a>
-              </li>
-              <li>
                 <a href="/contact" className="hover:text-primary transition-colors">
                   Contact Us
                 </a>
@@ -38,7 +33,7 @@ const Footer = () => {
             <div className="space-y-2 text-sm opacity-90">
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <span>+91-8277049441</span>
+                <span>+91-9964556195</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />

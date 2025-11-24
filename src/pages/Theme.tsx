@@ -1,72 +1,74 @@
-import { Lightbulb, Wind, Droplets, Factory, Leaf, Zap } from "lucide-react";
+import { Leaf, Zap, Battery, Flame, Globe, Beaker } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Theme = () => {
   const themes = [
     {
-      icon: Zap,
-      title: "Renewable Energy Systems",
-      topics: [
-        "Solar energy technologies",
-        "Wind power generation",
-        "Hydroelectric systems",
-        "Biomass energy",
-        "Geothermal energy",
-      ],
-    },
-    {
       icon: Leaf,
-      title: "Environmental Technologies",
+      title: "Green and Sustainable Chemistry",
       topics: [
-        "Air pollution control",
-        "Water treatment technologies",
-        "Soil remediation",
-        "Environmental monitoring",
-        "Ecological restoration",
+        "Green synthesis and catalysis",
+        "Environmentally benign solvents",
+        "Renewable feedstocks and bio-based materials",
+        "Waste minimization and atom economy",
+        "Life cycle assessment of chemical processes",
       ],
     },
     {
-      icon: Factory,
-      title: "Sustainable Manufacturing",
+      icon: Beaker,
+      title: "Catalysis",
       topics: [
-        "Green manufacturing processes",
-        "Circular economy",
-        "Industrial ecology",
-        "Cleaner production",
-        "Sustainable supply chain",
+        "Water splitting reactions",
+        "Photocatalysis",
+        "Electrocatalysis",
+        "Heterogeneous and homogeneous catalysis",
+        "Catalyst design and optimization",
       ],
     },
     {
-      icon: Droplets,
-      title: "Water & Waste Management",
+      icon: Zap,
+      title: "Energy Conversion Devices",
       topics: [
-        "Wastewater treatment",
-        "Solid waste management",
-        "Recycling technologies",
-        "Water conservation",
-        "E-waste management",
+        "Solar cells - polymer solar cells, dye-sensitized solar cells",
+        "Perovskite solar cells, quantum dot solar cells",
+        "Hybrid solar cells, silicon solar cells",
+        "Thin-film and multi-junction solar cells",
+        "Solar cell efficiency and stability improvements",
       ],
     },
     {
-      icon: Wind,
-      title: "Climate Change & Policy",
+      icon: Battery,
+      title: "Energy Storage Devices",
       topics: [
-        "Climate change mitigation",
-        "Carbon footprint reduction",
-        "Environmental policy",
-        "Sustainable development goals",
-        "Green economy",
+        "Polymer batteries, Li-ion batteries, Na-ion batteries",
+        "K-ion batteries, zinc-magnesium batteries",
+        "Redox flow batteries, supercapacitors",
+        "Battery management systems",
+        "Advanced electrode materials and electrolytes",
       ],
     },
     {
-      icon: Lightbulb,
-      title: "Energy Efficiency",
+      icon: Flame,
+      title: "Fuel Cells",
       topics: [
-        "Smart grid technologies",
-        "Energy storage systems",
-        "Building energy management",
-        "Industrial energy efficiency",
-        "Electric vehicles",
+        "Direct methanol fuel cells",
+        "Solid-oxide fuel cells",
+        "Reversible fuel cells",
+        "Phosphoric acid fuel cells, alkaline fuel cells",
+        "Molten carbonate fuel cells",
+        "Fuel cell stack design and optimization",
+      ],
+    },
+    {
+      icon: Globe,
+      title: "Environmental Aspects",
+      topics: [
+        "CO2 reduction and carbon capture",
+        "CO oxidation",
+        "Nitrate reduction (ammonia synthesis)",
+        "Pollution remediation and monitoring",
+        "Sustainable waste management",
+        "Green technology for environmental protection",
       ],
     },
   ];
@@ -76,28 +78,31 @@ const Theme = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4">Conference Themes</h1>
+            <h1 className="text-4xl font-bold mb-4">Themes of the Conference</h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              ICSEET-2025 focuses on various aspects of sustainable energy and environmental solutions. 
+              ICSEES-2025 focuses on cutting-edge research in sustainable energy and environmental solutions. 
               Researchers are invited to submit their work in the following thematic areas:
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {themes.map((theme, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card key={index} className="hover:shadow-lg transition-shadow border-primary/20">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3">
-                    <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+                    <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <theme.icon className="h-5 w-5 text-primary" />
                     </div>
-                    <span className="text-lg">{theme.title}</span>
+                    <span className="text-lg leading-tight">{theme.title}</span>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     {theme.topics.map((topic, topicIndex) => (
-                      <li key={topicIndex}>• {topic}</li>
+                      <li key={topicIndex} className="flex items-start gap-2">
+                        <span className="text-primary mt-0.5">•</span>
+                        <span>{topic}</span>
+                      </li>
                     ))}
                   </ul>
                 </CardContent>
@@ -105,14 +110,14 @@ const Theme = () => {
             ))}
           </div>
 
-          <Card className="mt-12 bg-primary/5 border-primary/20">
+          <Card className="mt-12 bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20">
             <CardContent className="pt-6">
-              <h3 className="font-semibold text-lg mb-3">Important Note</h3>
-              <p className="text-muted-foreground">
+              <h3 className="font-semibold text-lg mb-3 text-center">Important Note</h3>
+              <p className="text-muted-foreground text-center max-w-4xl mx-auto">
                 The above list is not exhaustive. Papers addressing other relevant topics within the broader 
-                scope of sustainable energy and environmental solutions are also welcome. Authors are encouraged 
-                to explore interdisciplinary approaches and innovative solutions to contemporary challenges in energy 
-                and environment.
+                scope of sustainable energy, environmental solutions, electrochemistry, and materials science 
+                are also welcome. Authors are encouraged to explore interdisciplinary approaches and innovative 
+                solutions to contemporary challenges in energy and environment.
               </p>
             </CardContent>
           </Card>

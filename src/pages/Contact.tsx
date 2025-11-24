@@ -1,22 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Globe } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
-  const { toast } = useToast();
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message Sent",
-      description: "Thank you for contacting us. We'll get back to you soon!",
-    });
-  };
-
   return (
     <div className="min-h-screen py-12">
       <div className="container mx-auto px-4">
@@ -24,50 +9,11 @@ const Contact = () => {
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
             <p className="text-lg text-muted-foreground">
-              Have questions? We're here to help!
+              Get in touch with the organizing committee
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <Card>
-              <CardHeader>
-                <CardTitle>Send us a Message</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <Label htmlFor="name">Name *</Label>
-                    <Input id="name" required placeholder="Your full name" />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="email">Email *</Label>
-                    <Input id="email" type="email" required placeholder="your.email@example.com" />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="subject">Subject *</Label>
-                    <Input id="subject" required placeholder="What is this regarding?" />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="message">Message *</Label>
-                    <Textarea
-                      id="message"
-                      required
-                      placeholder="Your message..."
-                      rows={5}
-                    />
-                  </div>
-
-                  <Button type="submit" className="w-full">
-                    Send Message
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-
-            <div className="space-y-6">
               <Card>
                 <CardHeader>
                   <CardTitle>Contact Information</CardTitle>
@@ -87,7 +33,8 @@ const Contact = () => {
                     <Phone className="h-5 w-5 text-primary mt-1" />
                     <div>
                       <p className="font-semibold">Phone</p>
-                      <p className="text-muted-foreground">+91-8277049441</p>
+                      <p className="text-muted-foreground">+91 9964556195</p>
+                      <p className="text-muted-foreground">+91 9885057117</p>
                     </div>
                   </div>
 
@@ -119,11 +66,11 @@ const Contact = () => {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Conference Coordinators</CardTitle>
+                  <CardTitle>Conference Chair</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div>
-                    <p className="font-semibold">Dr. B. R. Radha Krushna</p>
+                    <p className="font-semibold">Dr. Madhusudana Reddy</p>
                     <p className="text-sm text-muted-foreground">Convener, Professor & Head</p>
                     <p className="text-sm text-muted-foreground">Department of Chemistry, REVA University</p>
                   </div>
@@ -138,7 +85,6 @@ const Contact = () => {
                   </div>
                 </CardContent>
               </Card>
-            </div>
           </div>
 
           <Card>
@@ -146,10 +92,17 @@ const Contact = () => {
               <CardTitle>Location Map</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                <p className="text-muted-foreground">
-                  Interactive map will be embedded here
-                </p>
+              <div className="aspect-video rounded-lg overflow-hidden">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.720610555168!2d77.63308074171067!3d13.116877601961464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae191736187a37%3A0x3092096ba7fb4c9b!2sREVA%20University!5e0!3m2!1sen!2sin!4v1763989356716!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="REVA University Location"
+                />
               </div>
               <p className="text-sm text-muted-foreground mt-4">
                 REVA University is easily accessible from Bangalore International Airport (approximately 35 km) 

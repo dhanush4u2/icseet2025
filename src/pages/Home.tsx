@@ -123,7 +123,7 @@ const Home = () => {
                 <Download className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Brochure</h3>
                 <Button variant="outline" size="sm" className="mt-2" asChild>
-                  <a href="/documents/Brochure-ICSEET-2025.docx" download>Download</a>
+                  <a href="/documents/Brochure.pdf" download>Download</a>
                 </Button>
               </CardContent>
             </Card>
@@ -143,7 +143,7 @@ const Home = () => {
                 <Download className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Schedule</h3>
                 <Button variant="outline" size="sm" className="mt-2" asChild>
-                  <a href="/schedule">View Schedule</a>
+                  <a href="/#">Coming Soon</a>
                 </Button>
               </CardContent>
             </Card>

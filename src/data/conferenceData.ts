@@ -212,7 +212,7 @@ export const speakers = [
     affiliation: "Head of Department - Materials Chemistry for Catalysis",
     organization: "Helmholtz-Zentrum Berlin & Technische Universität Berlin",
     location: "Germany",
-    image: "/assets/speakers/prashanth-menezes.jpg"
+    image: "/speakers/prashanth.png"
   },
   {
     name: "Dr. Xuezhu Xu",
@@ -220,7 +220,7 @@ export const speakers = [
     affiliation: "Associate Professor",
     organization: "South China Advanced Optoelectronic Academy, South China Normal University",
     location: "China",
-    image: "/assets/speakers/xuezhu-xu.jpg"
+    image: "speakers/xue.png"
   },
   {
     name: "Dr. Mohamed Mamlouk",

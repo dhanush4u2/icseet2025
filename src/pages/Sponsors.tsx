@@ -1,89 +1,109 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Award, Star, Sparkles, Mail } from "lucide-react";
-import sponsorLogo from "@/assets/sponsor-logo.png";
-import sponsorImage from "@/assets/sponsor-image.jpg";
+import { Mail, Phone, Globe } from "lucide-react";
 
 const Sponsors = () => {
-  const sponsorshipTiers = [
+  const sponsors = [
     {
-      name: "Platinum Sponsor",
-      icon: Sparkles,
-      amount: "₹5,00,000",
-      benefits: [
-        "Prime logo placement on all conference materials",
-        "Dedicated exhibition booth (Premium location)",
-        "5 complimentary conference registrations",
-        "Speaking opportunity in plenary session",
-        "Full-page advertisement in conference proceedings",
-        "Recognition in all press releases",
-        "Exclusive networking session with delegates",
-      ],
+      name: "Anusandhan National Research Foundation (ANRF)",
+      subtitle: "Department of Science and Technology, Govt. Of India, India",
+      logo: "/sponsors/anrf.png",
+      tier: "Principal Sponsor",
     },
     {
-      name: "Gold Sponsor",
-      icon: Award,
-      amount: "₹3,00,000",
-      benefits: [
-        "Prominent logo placement on conference materials",
-        "Exhibition booth",
-        "3 complimentary conference registrations",
-        "Half-page advertisement in conference proceedings",
-        "Recognition in conference website and banners",
-        "Networking opportunities with participants",
-      ],
+      name: "Raman INNOLABS",
+      subtitle: "Manufacturers and Suppliers",
+      description: "Quartz wares, Alumina wares, Quartz and Alumina tubes, Furnaces, Ovens, Heating Systems, Glass wares, Autoclaves, Advanced Research Materials, High Vacuum systems - Vacuum pumps and etc.",
+      email: "ramaninnolabs@gmail.com",
+      phone: ["8884733828", "7795989765"],
+      logo: "/sponsors/raman.png",
+      tier: "Major Sponsor",
     },
     {
-      name: "Silver Sponsor",
-      icon: Star,
-      amount: "₹1,50,000",
-      benefits: [
-        "Logo placement on conference materials",
-        "2 complimentary conference registrations",
-        "Quarter-page advertisement in proceedings",
-        "Recognition on conference website",
-        "Display of promotional materials at venue",
-      ],
+      name: "Research Support India (RSI)",
+      subtitle: "Research Equipment & Support Services",
+      address: "Alliance Galleria, Magnus D-604, 200 ft Radial Road, Pallavaram, Chennai – 600043",
+      logo: "/sponsors/rsi.png",
+      tier: "Sponsor",
+    },
+    {
+      name: "Elixir Technologies",
+      address: "300/2 Chamundeshwari Layout, Doddabommasandra Main Road, Vidyaranyapura, Bengalore 560097",
+      logo: "/sponsors/Elixir.png",
+      tier: "Sponsor",
     },
   ];
+
+  const mediaPartner = {
+    name: "Lab A To Z",
+    logo: "/sponsors/lab.png",
+  };
 
   return (
     <div className="min-h-screen py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4">Sponsors & Partners</h1>
+            <h1 className="text-4xl font-bold mb-4">Our Sponsors & Partners</h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              We gratefully acknowledge our sponsors who support ICSEET-2025 and share our commitment 
-              to advancing sustainable energy and environmental technologies.
+              We gratefully acknowledge our sponsors who support ICSEES-2025 and share our commitment 
+              to advancing sustainable energy and environmental solutions.
             </p>
           </div>
 
-          <Card className="mb-16 shadow-lg">
-            <CardHeader className="text-center pb-4">
-              <CardTitle className="text-3xl">Our Sponsors</CardTitle>
-              <p className="text-muted-foreground mt-2">
-                Thank you to our valued partners supporting ICSEET-2025
-              </p>
+          {/* Principal Sponsor */}
+          <Card className="mb-12 shadow-xl border-primary/30">
+            <CardHeader className="text-center bg-gradient-to-r from-primary/10 to-primary/5 pb-4">
+              <div className="inline-block px-4 py-1 bg-primary/20 rounded-full mb-2">
+                <p className="text-sm font-semibold text-primary">Principal Sponsor</p>
+              </div>
+              <CardTitle className="text-2xl">{sponsors[0].name}</CardTitle>
+              <p className="text-muted-foreground text-sm mt-2">{sponsors[0].subtitle}</p>
             </CardHeader>
-            <CardContent>
-              <div className="space-y-8">
-                <div className="text-center py-6">
-                  <h3 className="text-xl font-semibold mb-8 text-primary">Research Supporters India</h3>
-                  <div className="flex flex-col items-center gap-8">
-                    <div className="w-64 h-auto bg-white p-6 rounded-lg shadow-sm">
-                      <img 
-                        src={sponsorLogo} 
-                        alt="Research Supporters India Logo"
-                        className="w-full h-full object-contain"
-                      />
+            <CardContent className="pt-8">
+              <div className="flex justify-center">
+                <div className="w-full max-w-2xl bg-white p-8 rounded-lg">
+                  <img 
+                    src={sponsors[0].logo} 
+                    alt={sponsors[0].name}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Major Sponsor */}
+          <Card className="mb-12 shadow-lg border-primary/20">
+            <CardHeader className="text-center bg-gradient-to-r from-primary/5 to-primary/10 pb-4">
+              <div className="inline-block px-4 py-1 bg-primary/20 rounded-full mb-2">
+                <p className="text-sm font-semibold text-primary">Major Sponsor</p>
+              </div>
+              <CardTitle className="text-2xl">{sponsors[1].name}</CardTitle>
+              <p className="text-muted-foreground text-sm mt-2">{sponsors[1].subtitle}</p>
+            </CardHeader>
+            <CardContent className="pt-8">
+              <div className="flex flex-col items-center gap-6">
+                <div className="w-full max-w-lg bg-white p-6 rounded-lg">
+                  <img 
+                    src={sponsors[1].logo} 
+                    alt={sponsors[1].name}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <div className="text-center max-w-3xl">
+                  <p className="text-muted-foreground mb-4">{sponsors[1].description}</p>
+                  <div className="flex flex-col items-center gap-2 text-sm">
+                    <div className="flex items-center gap-2">
+                      <Mail className="h-4 w-4 text-primary" />
+                      <a href={`mailto:${sponsors[1].email}`} className="text-primary hover:underline">
+                        {sponsors[1].email}
+                      </a>
                     </div>
-                    <div className="w-full max-w-3xl">
-                      <img 
-                        src={sponsorImage} 
-                        alt="Research Supporters India Equipment"
-                        className="w-full h-auto rounded-lg shadow-lg"
-                      />
+                    <div className="flex items-center gap-2">
+                      <Phone className="h-4 w-4 text-primary" />
+                      <span className="text-muted-foreground">
+                        {sponsors[1].phone?.join(", ")}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -91,101 +111,57 @@ const Sponsors = () => {
             </CardContent>
           </Card>
 
+          {/* Other Sponsors */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-center mb-4">Sponsorship Opportunities</h2>
-            <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Partner with ICSEET-2025 to showcase your organization and connect with leading researchers, 
-              academics, and industry professionals from around the world.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6">
-              {sponsorshipTiers.map((tier, index) => (
-                <Card
-                  key={index}
-                  className={`hover:shadow-lg transition-shadow ${
-                    index === 0 ? "border-primary border-2" : ""
-                  }`}
-                >
-                  <CardHeader className="text-center">
-                    <div className="mx-auto mb-4 h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
-                      <tier.icon className="h-8 w-8 text-primary" />
-                    </div>
-                    <CardTitle className="text-xl">{tier.name}</CardTitle>
-                    <p className="text-3xl font-bold text-primary mt-2">{tier.amount}</p>
+            <h2 className="text-2xl font-bold text-center mb-8">Sponsors</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {sponsors.slice(2).map((sponsor, index) => (
+                <Card key={index} className="hover:shadow-lg transition-shadow">
+                  <CardHeader className="text-center pb-4">
+                    <CardTitle className="text-xl">{sponsor.name}</CardTitle>
+                    {sponsor.subtitle && (
+                      <p className="text-sm text-muted-foreground mt-1">{sponsor.subtitle}</p>
+                    )}
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      {tier.benefits.map((benefit, benefitIndex) => (
-                        <li key={benefitIndex} className="flex items-start gap-2">
-                          <span className="text-primary mt-1">✓</span>
-                          <span>{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="flex flex-col items-center gap-4">
+                      <div className="w-full max-w-sm bg-white p-4 rounded-lg">
+                        <img 
+                          src={sponsor.logo} 
+                          alt={sponsor.name}
+                          className="w-full h-auto object-contain"
+                        />
+                      </div>
+                      {sponsor.address && (
+                        <p className="text-sm text-muted-foreground text-center">
+                          {sponsor.address}
+                        </p>
+                      )}
+                    </div>
                   </CardContent>
                 </Card>
               ))}
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <Card>
-              <CardHeader>
-                <CardTitle>Other Sponsorship Opportunities</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li>
-                    <p className="font-semibold text-foreground">Conference Bag Sponsor</p>
-                    <p className="text-sm">₹75,000 - Your logo on all conference bags</p>
-                  </li>
-                  <li>
-                    <p className="font-semibold text-foreground">Lunch/Dinner Sponsor</p>
-                    <p className="text-sm">₹1,00,000 per session</p>
-                  </li>
-                  <li>
-                    <p className="font-semibold text-foreground">Session Sponsor</p>
-                    <p className="text-sm">₹50,000 per technical session</p>
-                  </li>
-                  <li>
-                    <p className="font-semibold text-foreground">Souvenir Sponsor</p>
-                    <p className="text-sm">₹60,000 - Full-page ad in conference souvenir</p>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Why Sponsor ICSEET-2025?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Access to 300+ researchers and industry professionals</li>
-                  <li>• Brand visibility across international audience</li>
-                  <li>• Networking with key decision makers</li>
-                  <li>• Association with premier academic institution</li>
-                  <li>• Showcase your products and services</li>
-                  <li>• Support advancement of sustainable technologies</li>
-                  <li>• Recruitment opportunities</li>
-                  <li>• Media coverage and publicity</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20">
-            <CardContent className="pt-6 text-center">
-              <h2 className="text-2xl font-bold mb-4">Become a Sponsor</h2>
-              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                Interested in becoming a sponsor? Contact us to explore partnership opportunities 
-                and discuss how we can work together.
-              </p>
-              <Button size="lg" asChild>
-                <a href="mailto:Icseet.2025@gmail.com">
-                  <Mail className="mr-2 h-4 w-4" />
-                  Contact Us for Sponsorship
-                </a>
-              </Button>
+          {/* Media Partner */}
+          <Card className="bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20">
+            <CardHeader className="text-center pb-4">
+              <div className="inline-block px-4 py-1 bg-primary/20 rounded-full mb-2">
+                <p className="text-sm font-semibold text-primary">Media Partner</p>
+              </div>
+              <CardTitle className="text-xl">{mediaPartner.name}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex justify-center">
+                <div className="w-full max-w-md bg-white p-6 rounded-lg">
+                  <img 
+                    src={mediaPartner.logo} 
+                    alt={mediaPartner.name}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>

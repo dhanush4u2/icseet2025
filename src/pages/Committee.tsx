@@ -4,7 +4,10 @@ import { chiefPatrons, patrons, organizingCommittee, advisoryCommittee } from "@
 
 const Committee = () => {
   const conveners = [
-    { name: "Dr. B. R. Radha Krushna", designation: "Professor & Head, Department of Chemistry, REVA University" },
+    { name: "Dr. Nagaraju D H", designation: "Professor, Department of Chemistry, REVA University" },
+  ];
+  const ConferenceChair = [
+    { name: "Dr. M. B. Madhusudana Reddy ", designation: "Head & Professor, Department of Chemistry, REVA University" },
   ];
 
   return (
@@ -56,6 +59,24 @@ const Committee = () => {
                   </div>
                 ))}
               </div>
+            </CardContent>
+          </Card>
+
+          {/* Conference Chair */}
+          <Card className="mb-8">
+            <CardHeader className="bg-gradient-to-r from-primary/10 to-primary/5">
+              <CardTitle className="flex items-center gap-2">
+                <UserCheck className="h-6 w-6 text-primary" />
+                Conference Chair
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="pt-6">
+              {ConferenceChair.map((person, index) => (
+                <div key={index} className="text-center py-4">
+                  <p className="font-bold text-xl mb-1">{person.name}</p>
+                  <p className="text-muted-foreground">{person.designation}</p>
+                </div>
+              ))}
             </CardContent>
           </Card>
 
